@@ -218,6 +218,7 @@
 				87064172210B5735002BF61B /* Resources */,
 				A921D7A4A2888205C7438DF4 /* [CP] Embed Pods Frameworks */,
 				F8879574E38793941965DFC6 /* [CP] Copy Pods Resources */,
+				870641EC210B91C0002BF61B /* Fabric Run Script */,
 			);
 			buildRules = (
 			);
@@ -388,6 +389,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoGalleryTests/Pods-PhotoGalleryTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		870641EC210B91C0002BF61B /* Fabric Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Fabric Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 8c9dd77ecb3aa5467d37fcf3974ad31e8992c080 46b1671ae2ee2322c21ed9f6f02f6a5a3d8f8d4a1ae256bd09f36ddc8252f649";
 		};
 		95E00A23E379974B8EE60A67 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -669,6 +684,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FQ6DQCJ2Q7;
 				INFOPLIST_FILE = PhotoGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
