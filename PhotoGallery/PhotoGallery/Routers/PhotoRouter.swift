@@ -13,11 +13,8 @@ class PhotoRouter {
  static let photosStoryboardName = "Main"
  static let photoDetailsViewControllerID = "PhotoDetailsViewController"
     
-    static func instantiateStartViewController() -> UIViewController {
-        guard let photoDetailsVC = UIStoryboard(name: photosStoryboardName, bundle: nil).instantiateViewController(withIdentifier: photoDetailsViewControllerID) as? PhotoDetailsViewController else {
-            return UIViewController()
-        }
-        return photoDetailsVC
+    static func instantiatePhotoDetailsViewController() -> UIViewController {
+        return UIStoryboard(name: photosStoryboardName, bundle: nil).instantiateViewController(withIdentifier: photoDetailsViewControllerID)
     }
 
 }

@@ -64,7 +64,11 @@ extension PhotoGalleryViewController: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        <#code#>
+        guard let viewModel = photosViewModel, let photoDetailsVC = PhotoRouter.instantiatePhotoDetailsViewController() as? PhotoDetailsViewController else {
+            return
+        }
+        photoDetailsVC.config(viewModel.createPhotoDetailsViewModel(at: indexPath.row))
+        self.present(photoDetailsVC, animated: true, completion: nil)
     }
 }
 

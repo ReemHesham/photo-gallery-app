@@ -44,4 +44,8 @@ class PhotosViewModel {
     func getPhotoUrl(at index: Int) -> String {
         return photos[index].urls?.small ?? ""
     }
+
+    func createPhotoDetailsViewModel(at index: Int) -> PhotoDetailsViewModel {
+        return PhotoDetailsViewModel(photos[index])
+    }
 }
