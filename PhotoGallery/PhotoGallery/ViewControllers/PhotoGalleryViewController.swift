@@ -45,6 +45,15 @@ extension PhotoGalleryViewController: UICollectionViewDataSource {
     }
 }
 
+extension PhotoGalleryViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let viewModel = photosViewModel, indexPath.row == viewModel.getPhotosCount() - 4 else {
+            return
+        }
+        viewModel.getPhotos()
+    }
+}
+
 extension PhotoGalleryViewController: PhotoGalleryDelegate {
     func updateUI() {
         collectionView.reloadData()

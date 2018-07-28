@@ -14,8 +14,8 @@ protocol PhotoGalleryDelegate: class {
 }
 
 class PhotosViewModel {
-    var photos: [Photo]?
-    var pageNumber = 0
+    var photos = [Photo]()
+    var pageNumber = 1
     weak var delegate: PhotoGalleryDelegate?
 
     init(_ delegate: PhotoGalleryDelegate) {
@@ -25,7 +25,8 @@ class PhotosViewModel {
     func getPhotos() {
         APIClient().getPhotoes(pageNumber) { (data, error) in
             if let data = data as? [[String: Any]] {
-                self.photos = PhotosManager.shared.parsePhotosResponse(data)
+                self.photos += PhotosManager.shared.parsePhotosResponse(data)
+                self.pageNumber += 1
                 self.delegate?.updateUI()
             } else if let error = error {
                 self.delegate?.updateUI(with: error.localizedDescription)
@@ -34,13 +35,10 @@ class PhotosViewModel {
     }
 
     func getPhotosCount() -> Int {
-        guard let photos = photos else {
-            return 0
-        }
         return photos.count
     }
 
     func getPhotoUrl(at index: Int) -> String {
-        return photos?[index].urls?.small ?? ""
+        return photos[index].urls?.small ?? ""
     }
 }
