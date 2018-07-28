@@ -17,8 +17,8 @@ class PhotoGalleryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        photosViewModel = PhotosViewModel()
-        
+        photosViewModel = PhotosViewModel(self)
+        photosViewModel?.getPhotos()
         collectionView.register(UINib(nibName: PhotoCollectionViewCell.cellId, bundle: nil), forCellWithReuseIdentifier: PhotoCollectionViewCell.cellId)
     }
 
@@ -41,5 +41,15 @@ extension PhotoGalleryViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         return cell
+    }
+}
+
+extension PhotoGalleryViewController: PhotoGalleryDelegate {
+    func updateUI() {
+        collectionView.reloadData()
+    }
+    
+    func updateUI(with error: String) {
+        
     }
 }

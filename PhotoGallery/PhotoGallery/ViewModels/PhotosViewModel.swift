@@ -8,14 +8,27 @@
 
 import Foundation
 
+protocol PhotoGalleryDelegate: class {
+    func updateUI()
+    func updateUI(with error: String)
+}
+
 class PhotosViewModel {
     var photos: [Photo]?
     var pageNumber = 0
+    weak var delegate: PhotoGalleryDelegate?
+
+    init(_ delegate: PhotoGalleryDelegate) {
+        self.delegate = delegate
+    }
     
     func getPhotos() {
         APIClient().getPhotoes(pageNumber) { (data, error) in
             if let data = data as? [[String: Any]] {
                 self.photos = PhotosManager.shared.parsePhotosResponse(data)
+                self.delegate?.updateUI()
+            } else if let error = error {
+                self.delegate?.updateUI(with: error.localizedDescription)
             }
         }
     }
