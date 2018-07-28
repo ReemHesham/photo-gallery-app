@@ -11,13 +11,15 @@ import UIKit
 class PhotoGalleryViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var loadingView: UIView!
+
     var photosViewModel: PhotosViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         photosViewModel = PhotosViewModel(self)
+        startLoading()
         photosViewModel?.getPhotos()
         collectionView.register(UINib(nibName: PhotoCollectionViewCell.cellId, bundle: nil), forCellWithReuseIdentifier: PhotoCollectionViewCell.cellId)
     }
@@ -25,6 +27,14 @@ class PhotoGalleryViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func startLoading() {
+        loadingView.isHidden = false
+    }
+
+    func stopLoading() {
+        loadingView.isHidden = true
     }
 }
 
@@ -47,7 +57,7 @@ extension PhotoGalleryViewController: UICollectionViewDataSource {
 
 extension PhotoGalleryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let viewModel = photosViewModel, indexPath.row == viewModel.getPhotosCount() - 4 else {
+        guard let viewModel = photosViewModel, indexPath.row == viewModel.getPhotosCount() - 8, !viewModel.isPendingResponse else {
             return
         }
         viewModel.getPhotos()
@@ -56,6 +66,7 @@ extension PhotoGalleryViewController: UICollectionViewDelegate {
 
 extension PhotoGalleryViewController: PhotoGalleryDelegate {
     func updateUI() {
+        stopLoading()
         collectionView.reloadData()
     }
     

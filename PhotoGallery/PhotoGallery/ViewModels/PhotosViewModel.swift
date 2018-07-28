@@ -14,8 +14,9 @@ protocol PhotoGalleryDelegate: class {
 }
 
 class PhotosViewModel {
-    var photos = [Photo]()
-    var pageNumber = 1
+    private var photos = [Photo]()
+    private var pageNumber = 1
+    var isPendingResponse = false
     weak var delegate: PhotoGalleryDelegate?
 
     init(_ delegate: PhotoGalleryDelegate) {
@@ -23,10 +24,12 @@ class PhotosViewModel {
     }
     
     func getPhotos() {
+        isPendingResponse = true
         APIClient().getPhotoes(pageNumber) { (data, error) in
             if let data = data as? [[String: Any]] {
                 self.photos += PhotosManager.shared.parsePhotosResponse(data)
                 self.pageNumber += 1
+                self.isPendingResponse = false
                 self.delegate?.updateUI()
             } else if let error = error {
                 self.delegate?.updateUI(with: error.localizedDescription)

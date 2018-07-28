@@ -41,18 +41,36 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="FGT-7i-p2i"/>
                                 </connections>
                             </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1h-Kk-Agf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="A8V-Ql-Rnm">
+                                        <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="A8V-Ql-Rnm" firstAttribute="centerY" secondItem="z1h-Kk-Agf" secondAttribute="centerY" id="2uJ-0I-upU"/>
+                                    <constraint firstItem="A8V-Ql-Rnm" firstAttribute="centerX" secondItem="z1h-Kk-Agf" secondAttribute="centerX" id="HF3-he-ZhA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7sP-ys-eMb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EH2-Vu-wcG"/>
                             <constraint firstItem="7sP-ys-eMb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EbK-vj-qYr"/>
+                            <constraint firstItem="z1h-Kk-Agf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K0U-lN-HU3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7sP-ys-eMb" secondAttribute="bottom" id="LMV-Ah-lN1"/>
+                            <constraint firstItem="z1h-Kk-Agf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oM6-tQ-hhI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z1h-Kk-Agf" secondAttribute="bottom" id="oyG-9F-vdL"/>
+                            <constraint firstItem="z1h-Kk-Agf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="prr-bk-S5l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7sP-ys-eMb" secondAttribute="trailing" id="zmq-Ot-CLe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="7sP-ys-eMb" id="89f-NJ-pAH"/>
+                        <outlet property="loadingView" destination="z1h-Kk-Agf" id="Y2F-Hi-RuV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
