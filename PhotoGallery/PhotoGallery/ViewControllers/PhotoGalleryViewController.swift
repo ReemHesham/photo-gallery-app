@@ -40,6 +40,7 @@ extension PhotoGalleryViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.cellId, for: indexPath) as? PhotoCollectionViewCell, let viewModel = photosViewModel else {
             return UICollectionViewCell()
         }
+        cell.config(viewModel.getPhotoUrl(at: indexPath.row))
         return cell
     }
 }
