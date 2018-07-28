@@ -18,6 +18,7 @@
 		87064198210B5735002BF61B /* PhotoGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87064197210B5735002BF61B /* PhotoGalleryUITests.swift */; };
 		8730121B210BA2F100623708 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8730121A210BA2F100623708 /* Photo.swift */; };
 		8730121E210BBE0B00623708 /* PhotoUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8730121D210BBE0B00623708 /* PhotoUrls.swift */; };
+		87301221210BCA4400623708 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87301220210BCA4400623708 /* APIClient.swift */; };
 		87301223210BCF2000623708 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87301222210BCF2000623708 /* Constants.swift */; };
 		CCBC5A4C0D3A846F54D62782 /* Pods_PhotoGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E968547ED783DEA2F02D0419 /* Pods_PhotoGallery.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		87064199210B5735002BF61B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8730121A210BA2F100623708 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		8730121D210BBE0B00623708 /* PhotoUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUrls.swift; sourceTree = "<group>"; };
+		87301220210BCA4400623708 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		87301222210BCF2000623708 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		912F14319F300079C863DED0 /* Pods-PhotoGalleryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoGalleryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoGalleryUITests/Pods-PhotoGalleryUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BF223F19041CD4AF829EE150 /* Pods_PhotoGalleryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoGalleryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 		87064176210B5735002BF61B /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
+				8730121F210BCA2D00623708 /* Network */,
 				87301219210BA2CE00623708 /* Model */,
 				870641EB210B8D98002BF61B /* Storyboards */,
 				870641E7210B8C13002BF61B /* ViewControllers */,
@@ -220,6 +223,14 @@
 				8730121D210BBE0B00623708 /* PhotoUrls.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8730121F210BCA2D00623708 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				87301220210BCA4400623708 /* APIClient.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,6 +562,7 @@
 				8730121B210BA2F100623708 /* Photo.swift in Sources */,
 				8706417A210B5735002BF61B /* ViewController.swift in Sources */,
 				8730121E210BBE0B00623708 /* PhotoUrls.swift in Sources */,
+				87301221210BCA4400623708 /* APIClient.swift in Sources */,
 				87064178210B5735002BF61B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -718,6 +730,7 @@
 			baseConfigurationReference = 3A28CF71000CF18D6EA5EA3A /* Pods-PhotoGallery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLIENT_ID = 80eb3f4209c4141e090a933d79d6e1feceac02812383e6fe0de25349aa239ebd;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FQ6DQCJ2Q7;
@@ -735,6 +748,7 @@
 			baseConfigurationReference = 4B35C64807161F4DEBA71208 /* Pods-PhotoGallery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLIENT_ID = 80eb3f4209c4141e090a933d79d6e1feceac02812383e6fe0de25349aa239ebd;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FQ6DQCJ2Q7;
 				INFOPLIST_FILE = PhotoGallery/Info.plist;

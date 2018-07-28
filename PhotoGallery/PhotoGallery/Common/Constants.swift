@@ -14,3 +14,5 @@ enum URLs {
 }
 
 let photosPerPage = 30
+let clientId = "\(Bundle.main.object(forInfoDictionaryKey: "CLIENT_ID") as? String ?? "")"
+
