@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PhotoGalleryViewController.swift
 //  PhotoGallery
 //
 //  Created by reem hesham on 7/27/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PhotoGalleryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
