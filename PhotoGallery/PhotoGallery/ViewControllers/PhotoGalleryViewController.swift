@@ -62,6 +62,10 @@ extension PhotoGalleryViewController: UICollectionViewDelegate {
         }
         viewModel.getPhotos()
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        <#code#>
+    }
 }
 
 extension PhotoGalleryViewController: PhotoGalleryDelegate {
