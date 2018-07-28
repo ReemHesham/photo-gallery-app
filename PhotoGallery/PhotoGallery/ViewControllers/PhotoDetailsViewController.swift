@@ -29,7 +29,4 @@ class PhotoDetailsViewController: UIViewController {
     func config(_ viewModel: PhotoDetailsViewModel) {
         photoDetailsViewModel = viewModel
     }
-    @IBAction func closeButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
 }

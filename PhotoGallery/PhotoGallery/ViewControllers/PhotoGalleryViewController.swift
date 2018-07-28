@@ -68,7 +68,14 @@ extension PhotoGalleryViewController: UICollectionViewDelegate {
             return
         }
         photoDetailsVC.config(viewModel.createPhotoDetailsViewModel(at: indexPath.row))
-        self.present(photoDetailsVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(photoDetailsVC, animated: true)
+    }
+}
+
+extension PhotoGalleryViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.width - 5) / 2
+        return CGSize(width: width, height: width)
     }
 }
 
