@@ -11,8 +11,9 @@ import UIKit
 class PhotoGalleryViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var loadingView: UIView!
-
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
+    
     var photosViewModel: PhotosViewModel?
 
     override func viewDidLoad() {
@@ -30,11 +31,15 @@ class PhotoGalleryViewController: UIViewController {
     }
 
     func startLoading() {
-        loadingView.isHidden = false
+        
     }
 
     func stopLoading() {
-        loadingView.isHidden = true
+    }
+    
+    @IBAction func retryButtonTapped(_ sender: Any) {
+        errorView.isHidden = true
+        photosViewModel?.getPhotos()
     }
 }
 
@@ -70,6 +75,7 @@ extension PhotoGalleryViewController: UICollectionViewDelegate {
         photoDetailsVC.config(viewModel.createPhotoDetailsViewModel(at: indexPath.row))
         self.navigationController?.pushViewController(photoDetailsVC, animated: true)
     }
+    
 }
 
 extension PhotoGalleryViewController: UICollectionViewDelegateFlowLayout {
@@ -86,6 +92,7 @@ extension PhotoGalleryViewController: PhotoGalleryDelegate {
     }
     
     func updateUI(with error: String) {
-        
+        errorView.isHidden = false
+        errorLabel.text = error
     }
 }

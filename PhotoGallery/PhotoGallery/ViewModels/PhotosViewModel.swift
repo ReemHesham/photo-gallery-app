@@ -25,15 +25,19 @@ class PhotosViewModel {
     
     func getPhotos() {
         isPendingResponse = true
-        APIClient().getPhotoes(pageNumber) { (data, error) in
-            if let data = data as? [[String: Any]] {
-                self.photos += PhotosManager.shared.parsePhotosResponse(data)
-                self.pageNumber += 1
-                self.isPendingResponse = false
-                self.delegate?.updateUI()
-            } else if let error = error {
-                self.delegate?.updateUI(with: error.localizedDescription)
+        if Utilities.isConnectedToNetwork() {
+            APIClient().getPhotoes(pageNumber) { (data, error) in
+                if let data = data as? [[String: Any]] {
+                    self.photos += PhotosManager.shared.parsePhotosResponse(data)
+                    self.pageNumber += 1
+                    self.isPendingResponse = false
+                    self.delegate?.updateUI()
+                } else if let error = error {
+                    self.delegate?.updateUI(with: error)
+                }
             }
+        } else {
+            delegate?.updateUI(with: Errors.noInternetConnection)
         }
     }
 

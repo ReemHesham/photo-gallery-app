@@ -18,14 +18,21 @@ class APIClient {
      pageNumber: Integer represents the current page number
      completion: The completion block, send either the reponse as [[String: Any]] or nil in case or error.
      */
-    func getPhotoes(_ pageNumber: Int, completion: @escaping (Any?, Error?) -> Void) {
+    func getPhotoes(_ pageNumber: Int, completion: @escaping (Any?, String?) -> Void) {
         let url = "\(URLs.baseUrl)\(URLs.photos)?client_id=\(clientId)&page=\(pageNumber)&per_page=\(photosPerPage)"
         Alamofire.request(url).responseJSON { response in
             
-            if let data = response.result.value  as? [[String: Any]] {
-                completion(data, nil)
-            } else {
-                completion(nil, response.error)
+            guard let statusCode = response.response?.statusCode else {
+                completion(nil, Errors.otherError)
+                return
+            }
+            switch statusCode {
+            case 200:
+                if let data = response.result.value  as? [[String: Any]] {
+                    completion(data, nil)
+                }
+            default:
+                completion(nil, Errors.otherError)
             }
         }
     }

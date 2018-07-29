@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PhotoGalleryViewController" customModule="PhotoGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7sP-ys-eMb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="2.5" id="g6v-xR-fdj">
                                     <size key="itemSize" width="165" height="165"/>
@@ -42,16 +42,41 @@
                                 </connections>
                             </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1h-Kk-Agf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="A8V-Ql-Rnm">
-                                        <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are currently offline.Check your settings and try again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBi-h3-SCd">
+                                        <rect key="frame" x="30" y="271.5" width="315" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="ucN-5n-Pkf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-internet" translatesAutoresizingMaskIntoConstraints="NO" id="jHm-JX-KE1">
+                                        <rect key="frame" x="162" y="210.5" width="51" height="51"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7i-QO-dky">
+                                        <rect key="frame" x="168.5" y="351.5" width="38" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="Retry">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="retryButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QKD-A4-4bI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.13512323943661972" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="A8V-Ql-Rnm" firstAttribute="centerY" secondItem="z1h-Kk-Agf" secondAttribute="centerY" id="2uJ-0I-upU"/>
-                                    <constraint firstItem="A8V-Ql-Rnm" firstAttribute="centerX" secondItem="z1h-Kk-Agf" secondAttribute="centerX" id="HF3-he-ZhA"/>
+                                    <constraint firstItem="cBi-h3-SCd" firstAttribute="centerY" secondItem="z1h-Kk-Agf" secondAttribute="centerY" id="9Ia-J6-9Je"/>
+                                    <constraint firstItem="S7i-QO-dky" firstAttribute="centerX" secondItem="z1h-Kk-Agf" secondAttribute="centerX" id="FP0-5j-RyD"/>
+                                    <constraint firstItem="S7i-QO-dky" firstAttribute="top" secondItem="cBi-h3-SCd" secondAttribute="bottom" constant="20" id="N9e-qx-QVG"/>
+                                    <constraint firstItem="cBi-h3-SCd" firstAttribute="leading" secondItem="z1h-Kk-Agf" secondAttribute="leading" constant="30" id="ZmR-Di-ygr"/>
+                                    <constraint firstItem="cBi-h3-SCd" firstAttribute="top" secondItem="jHm-JX-KE1" secondAttribute="bottom" constant="10" id="odb-A5-Mhf"/>
+                                    <constraint firstAttribute="trailing" secondItem="cBi-h3-SCd" secondAttribute="trailing" constant="30" id="pFR-dZ-Qq4"/>
+                                    <constraint firstItem="cBi-h3-SCd" firstAttribute="centerX" secondItem="z1h-Kk-Agf" secondAttribute="centerX" id="pHf-LU-iMs"/>
+                                    <constraint firstItem="jHm-JX-KE1" firstAttribute="centerX" secondItem="z1h-Kk-Agf" secondAttribute="centerX" id="w3d-GL-hIX"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -71,7 +96,8 @@
                     <navigationItem key="navigationItem" title="Gallery" id="55f-Ko-TCh"/>
                     <connections>
                         <outlet property="collectionView" destination="7sP-ys-eMb" id="89f-NJ-pAH"/>
-                        <outlet property="loadingView" destination="z1h-Kk-Agf" id="Y2F-Hi-RuV"/>
+                        <outlet property="errorLabel" destination="cBi-h3-SCd" id="HHJ-Mo-Tqm"/>
+                        <outlet property="errorView" destination="z1h-Kk-Agf" id="H9N-II-buM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -86,11 +112,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2nx-EM-kaw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2nx-EM-kaw">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2nx-EM-kaw" firstAttribute="top" secondItem="xMB-42-fWH" secondAttribute="top" id="5Qi-Bk-FoI"/>
                             <constraint firstItem="xMB-42-fWH" firstAttribute="bottom" secondItem="2nx-EM-kaw" secondAttribute="bottom" id="VSe-Rc-bnq"/>
@@ -112,13 +138,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4JR-Vl-EQ4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="llO-Ll-KZX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="llO-Ll-KZX">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.33333333333333331" green="0.0" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
+                        <color key="barTintColor" red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -130,5 +153,8 @@
             <point key="canvasLocation" x="-295" y="44"/>
         </scene>
     </scenes>
-    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    <resources>
+        <image name="no-internet" width="51" height="51"/>
+    </resources>
+    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
