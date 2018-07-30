@@ -28,9 +28,13 @@ class PhotoGalleryUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testNavigationFlow() {
+        
+        let app = XCUIApplication()
+        let collectionView = app.otherElements.containing(.navigationBar, identifier:"Gallery").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .collectionView).element
+        collectionView.swipeUp()
+        collectionView.tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .scrollView).element
     }
     
 }
