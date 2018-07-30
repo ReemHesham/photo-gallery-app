@@ -20,17 +20,24 @@ class PhotoGalleryTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+
+    func testJSONMapping() throws {
+        let bundle = Bundle(for: type(of: self))
+        
+        guard let url = bundle.url(forResource: "Photos", withExtension: "json") else {
+            XCTFail("Missing file: Photos.json")
+            return
         }
+        
+        let data = try Data(contentsOf: url)
+        guard let json =  try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? [[String: Any]] else {
+            return
+        }
+        let photos = PhotosManager.shared.parsePhotosResponse(json)
+        XCTAssertNotNil(photos, "Faild to parse photos json")
+        XCTAssertEqual(photos[0].id, "w8_IxV1G_EI")
+        XCTAssertEqual(photos[0].urls?.small, "https://images.unsplash.com/photo-1532800621406-0280a106eaa6?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjMyNTM1fQ&s=fd97ef8d5c741fbc9c13a2fdc9ccfba8")
+        XCTAssertEqual(photos[0].height, 5305, "height: \(photos[0].height ?? 0)")
     }
     
 }
