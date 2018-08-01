@@ -75,7 +75,6 @@
                                     <constraint firstItem="cBi-h3-SCd" firstAttribute="leading" secondItem="z1h-Kk-Agf" secondAttribute="leading" constant="30" id="ZmR-Di-ygr"/>
                                     <constraint firstItem="cBi-h3-SCd" firstAttribute="top" secondItem="jHm-JX-KE1" secondAttribute="bottom" constant="10" id="odb-A5-Mhf"/>
                                     <constraint firstAttribute="trailing" secondItem="cBi-h3-SCd" secondAttribute="trailing" constant="30" id="pFR-dZ-Qq4"/>
-                                    <constraint firstItem="cBi-h3-SCd" firstAttribute="centerX" secondItem="z1h-Kk-Agf" secondAttribute="centerX" id="pHf-LU-iMs"/>
                                     <constraint firstItem="jHm-JX-KE1" firstAttribute="centerX" secondItem="z1h-Kk-Agf" secondAttribute="centerX" id="w3d-GL-hIX"/>
                                 </constraints>
                             </view>

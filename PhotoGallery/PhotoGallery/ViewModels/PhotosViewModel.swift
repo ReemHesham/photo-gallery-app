@@ -49,7 +49,7 @@ class PhotosViewModel {
         return photos[index].urls?.small ?? ""
     }
 
-    func createPhotoDetailsViewModel(at index: Int) -> PhotoDetailsViewModel {
-        return PhotoDetailsViewModel(photos[index])
+    func createPhotoDetailsPageViewModel(at index: Int) -> PhotoPageViewModel {
+        return PhotoPageViewModel(photos, index: index)
     }
 }

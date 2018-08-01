@@ -8,13 +8,13 @@
 
 import Foundation
 
-class Photo {
+class Photo: NSObject {
     var id: String?
     var createdAt: String?
     var updatedAt: String?
     var width: Int?
     var height: Int?
-    var description: String?
+    var photoDescription: String?
     var color: String?
     var urls: PhotoUrls?
     var likes: Int?
@@ -28,7 +28,7 @@ class Photo {
         photo.updatedAt = data["updated_at"] as? String
         photo.width = data["width"] as? Int
         photo.height = data["height"] as? Int
-        photo.description = data["description"] as? String
+        photo.photoDescription = data["description"] as? String
         photo.color = data["color"] as? String
         photo.likes = data["likes"] as? Int
         if let urlsDictionary = data["urls"] as? [String: Any] {
