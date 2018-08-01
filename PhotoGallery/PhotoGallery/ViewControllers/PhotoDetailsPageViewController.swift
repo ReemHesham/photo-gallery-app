@@ -12,6 +12,7 @@ class PhotoDetailsPageViewController: UIPageViewController {
 
     var photoPageViewModel: PhotoPageViewModel?
     fileprivate var currentIndex: Int = 0
+    fileprivate let photoSliderCache = PhotoSliderCache()
 
     func configure(_ viewModel: PhotoPageViewModel) {
         photoPageViewModel = viewModel
@@ -51,10 +52,14 @@ class PhotoDetailsPageViewController: UIPageViewController {
 
     fileprivate func photoViewController(for pageIndex: Int) -> PhotoDetailsViewController? {
 
+        if let cachedViewController = photoSliderCache.object(forKey: pageIndex as AnyObject) as? PhotoDetailsViewController {
+            return cachedViewController
+        }
         guard let viewController = PhotoSliderRouter.instantiatePhotoDetailsViewController() as? PhotoDetailsViewController, let viewModel = photoPageViewModel else {
             fatalError("Unable to instantiate a PhotoDetailsViewController")
         }
         viewController.config(viewModel.createPhotoDetailsViewModel(for: pageIndex))
+        photoSliderCache.setObject(viewController, forKey: pageIndex as AnyObject)
         return viewController
     }
     
