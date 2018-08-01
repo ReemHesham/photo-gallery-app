@@ -13,6 +13,7 @@ class PhotoDetailsPageViewController: UIPageViewController {
     var photoPageViewModel: PhotoPageViewModel?
     fileprivate var currentIndex: Int = 0
     fileprivate let photoSliderCache = PhotoSliderCache()
+    fileprivate var isNavigationBarHidden = false
 
     func configure(_ viewModel: PhotoPageViewModel) {
         photoPageViewModel = viewModel
@@ -24,6 +25,8 @@ class PhotoDetailsPageViewController: UIPageViewController {
         dataSource = self
         delegate = self
 
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleNavigationBar(_:)))
+        view.addGestureRecognizer(tapGesture)
         guard let viewModel = photoPageViewModel else {
             return
         }
@@ -62,7 +65,23 @@ class PhotoDetailsPageViewController: UIPageViewController {
         photoSliderCache.setObject(viewController, forKey: pageIndex as AnyObject)
         return viewController
     }
+    // MARK: Gestures
     
+    @objc fileprivate func handleNavigationBar(_ gesture:UITapGestureRecognizer) {
+        setUpNavigationBar(isNavigationBarHidden == true)
+    }
+    // MARK: Actions
+    func setUpNavigationBar(_ isVisible: Bool) {
+        isNavigationBarHidden = !isVisible
+        
+        UIView.animate(withDuration: 0.23, delay: 0.0, options: .beginFromCurrentState, animations: { () -> Void in
+                        
+            self.navigationController?.navigationBar.alpha = (isVisible ? 1.0 : 0.0)
+                        
+        }, completion: nil)
+        
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
 }
 // MARK: UIPageViewControllerDataSource
 extension PhotoDetailsPageViewController: UIPageViewControllerDataSource {
