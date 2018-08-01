@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Details Page View Controller-->
+        <scene sceneID="ndN-a8-SVF">
+            <objects>
+                <pageViewController storyboardIdentifier="PhotoDetailsPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="UfW-LX-WQz" customClass="PhotoDetailsPageViewController" customModule="PhotoGallery" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e5e-84-ca3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1231" y="44"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="maH-LE-cWB">
+            <objects>
+                <viewController storyboardIdentifier="PhotoDetailsViewController" id="cs6-6B-c4M" customClass="PhotoDetailsViewController" customModule="PhotoGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xmn-C6-aV0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hks-wr-Ncb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dqI-je-zpJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dqI-je-zpJ" firstAttribute="centerY" secondItem="hks-wr-Ncb" secondAttribute="centerY" id="4kI-fh-nU2"/>
+                                    <constraint firstAttribute="trailing" secondItem="dqI-je-zpJ" secondAttribute="trailing" id="9xy-qP-Frx"/>
+                                    <constraint firstItem="dqI-je-zpJ" firstAttribute="top" secondItem="hks-wr-Ncb" secondAttribute="top" id="A8X-UO-lRb"/>
+                                    <constraint firstItem="dqI-je-zpJ" firstAttribute="leading" secondItem="hks-wr-Ncb" secondAttribute="leading" id="NYq-ac-b2i"/>
+                                    <constraint firstAttribute="bottom" secondItem="dqI-je-zpJ" secondAttribute="bottom" id="UMS-0R-acj"/>
+                                    <constraint firstItem="dqI-je-zpJ" firstAttribute="centerX" secondItem="hks-wr-Ncb" secondAttribute="centerX" id="ae0-6w-khY"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="cs6-6B-c4M" id="BEB-EF-cqn"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hks-wr-Ncb" firstAttribute="leading" secondItem="bCa-0W-BOf" secondAttribute="leading" id="2Sr-BY-ErT"/>
+                            <constraint firstItem="bCa-0W-BOf" firstAttribute="bottom" secondItem="hks-wr-Ncb" secondAttribute="bottom" id="adU-xx-qmE"/>
+                            <constraint firstItem="hks-wr-Ncb" firstAttribute="top" secondItem="bCa-0W-BOf" secondAttribute="top" id="blK-70-6W3"/>
+                            <constraint firstItem="bCa-0W-BOf" firstAttribute="trailing" secondItem="hks-wr-Ncb" secondAttribute="trailing" id="t7E-xx-IgV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bCa-0W-BOf"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoImage" destination="dqI-je-zpJ" id="S3P-rR-VDo"/>
+                        <outlet property="scrollView" destination="hks-wr-Ncb" id="wv9-bk-Ocg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nES-Hh-dHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2004" y="44"/>
+        </scene>
+    </scenes>
+</document>
