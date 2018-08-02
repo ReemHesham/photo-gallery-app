@@ -20,16 +20,12 @@ class PhotoDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 6.0
+        scrollView.maximumZoomScale = 3.0
+        scrollView.zoomScale = 1.0
         let doubleTapGest = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTapScrollView(recognizer:)))
         doubleTapGest.numberOfTapsRequired = 2
         scrollView.addGestureRecognizer(doubleTapGest)
         photoImage.kf.setImage(with: photoDetailsViewModel?.getPhotoUrl(), placeholder: #imageLiteral(resourceName: "Placeholder"), options: nil, progressBlock: nil, completionHandler: nil)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func config(_ viewModel: PhotoDetailsViewModel) {
