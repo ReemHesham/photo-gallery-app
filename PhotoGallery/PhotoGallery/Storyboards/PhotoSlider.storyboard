@@ -12,10 +12,12 @@
         <!--Photo Details Page View Controller-->
         <scene sceneID="ndN-a8-SVF">
             <objects>
-                <pageViewController storyboardIdentifier="PhotoDetailsPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="UfW-LX-WQz" customClass="PhotoDetailsPageViewController" customModule="PhotoGallery" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PhotoDetailsPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="UfW-LX-WQz" customClass="PhotoDetailsPageViewController" customModule="PhotoGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mL4-Me-IE3"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5e-84-ca3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1231" y="44"/>
+            <point key="canvasLocation" x="1568.8" y="43.628185907046479"/>
         </scene>
         <!--Photo Details View Controller-->
         <scene sceneID="maH-LE-cWB">
@@ -30,6 +32,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dqI-je-zpJ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -61,7 +64,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nES-Hh-dHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="44"/>
+            <point key="canvasLocation" x="2343.1999999999998" y="43.628185907046479"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wTo-2D-K6c">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8eU-BY-oCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="SliderNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="iAK-dy-aPH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="uMl-gw-EQy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UfW-LX-WQz" kind="relationship" relationship="rootViewController" id="alR-2G-aYC"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="740" y="44"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

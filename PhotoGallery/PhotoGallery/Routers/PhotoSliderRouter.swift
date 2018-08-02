@@ -13,6 +13,7 @@ class PhotoSliderRouter {
     static let photoSliderStoryboardName = "PhotoSlider"
     static let photoDetailsPageViewControllerID = "PhotoDetailsPageViewController"
     static let photoDetailsViewControllerID = "PhotoDetailsViewController"
+    static let sliderNavigationControllerID = "SliderNavigationController"
     
     static func instantiatePhotoDetailsViewController() -> UIViewController {
         return UIStoryboard(name: photoSliderStoryboardName, bundle: nil).instantiateViewController(withIdentifier: photoDetailsViewControllerID)
@@ -20,6 +21,13 @@ class PhotoSliderRouter {
     
     static func instantiatePhotoDetailsPageViewController() -> UIViewController {
         return UIStoryboard(name: photoSliderStoryboardName, bundle: nil).instantiateViewController(withIdentifier: photoDetailsPageViewControllerID)
+    }
+    
+    static func instantiateSliderPageNavigationController() -> UINavigationController {
+        guard let sliderNavigationController = UIStoryboard(name: photoSliderStoryboardName, bundle: nil).instantiateViewController(withIdentifier: sliderNavigationControllerID) as? UINavigationController else {
+            return UINavigationController()
+        }
+        return sliderNavigationController
     }
 
 }

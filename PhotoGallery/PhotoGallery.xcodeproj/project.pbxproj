@@ -31,6 +31,7 @@
 		87301235210D0B6B00623708 /* PhotoSliderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87301234210D0B6B00623708 /* PhotoSliderRouter.swift */; };
 		87301237210D18B900623708 /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87301236210D18B900623708 /* PhotoDetailsViewModel.swift */; };
 		87301239210E570F00623708 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87301238210E570F00623708 /* Utilities.swift */; };
+		87327C312112817600D10EE5 /* PhotoDetailsPageViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87327C302112817500D10EE5 /* PhotoDetailsPageViewController+extension.swift */; };
 		87AEEF822112111A00695796 /* PhotoSliderCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEEF812112111A00695796 /* PhotoSliderCache.swift */; };
 		87DC911B2111FCC0001CAF26 /* PhotoSlider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87DC911A2111FCC0001CAF26 /* PhotoSlider.storyboard */; };
 		CCBC5A4C0D3A846F54D62782 /* Pods_PhotoGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E968547ED783DEA2F02D0419 /* Pods_PhotoGallery.framework */; };
@@ -85,6 +86,7 @@
 		87301234210D0B6B00623708 /* PhotoSliderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSliderRouter.swift; sourceTree = "<group>"; };
 		87301236210D18B900623708 /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
 		87301238210E570F00623708 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		87327C302112817500D10EE5 /* PhotoDetailsPageViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsPageViewController+extension.swift"; sourceTree = "<group>"; };
 		87AEEF812112111A00695796 /* PhotoSliderCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSliderCache.swift; sourceTree = "<group>"; };
 		87DC911A2111FCC0001CAF26 /* PhotoSlider.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoSlider.storyboard; sourceTree = "<group>"; };
 		912F14319F300079C863DED0 /* Pods-PhotoGalleryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoGalleryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoGalleryUITests/Pods-PhotoGalleryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				87301231210D098600623708 /* PhotoDetailsViewController.swift */,
 				87064179210B5735002BF61B /* PhotoGalleryViewController.swift */,
 				87158B9E2111D49300B2190D /* PhotoDetailsPageViewController.swift */,
+				87327C302112817500D10EE5 /* PhotoDetailsPageViewController+extension.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				87064178210B5735002BF61B /* AppDelegate.swift in Sources */,
 				87301228210C8FD400623708 /* PhotosManager.swift in Sources */,
 				87158BA12111E48400B2190D /* PhotoPageViewModel.swift in Sources */,
+				87327C312112817600D10EE5 /* PhotoDetailsPageViewController+extension.swift in Sources */,
 				87158B9F2111D49300B2190D /* PhotoDetailsPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
