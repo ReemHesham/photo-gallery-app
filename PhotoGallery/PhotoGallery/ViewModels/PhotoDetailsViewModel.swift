@@ -17,9 +17,13 @@ class PhotoDetailsViewModel {
     }
 
     func getPhotoUrl() -> URL? {
-        guard let urlString = photo?.urls?.small, let url = URL(string: urlString) else {
+        guard let urlString = photo?.getPhotoSmallUrl(), let url = URL(string: urlString) else {
             return nil
         }
         return url
+    }
+    
+    func getPhotoOwnerName() -> String {
+        return photo?.getOwnerName() ?? ""
     }
 }

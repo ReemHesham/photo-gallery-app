@@ -11,6 +11,7 @@ import Kingfisher
 
 class PhotoDetailsViewController: UIViewController {
 
+    @IBOutlet weak var ownerNameLabel: UILabel!
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -26,8 +27,14 @@ class PhotoDetailsViewController: UIViewController {
         doubleTapGest.numberOfTapsRequired = 2
         scrollView.addGestureRecognizer(doubleTapGest)
         photoImage.kf.setImage(with: photoDetailsViewModel?.getPhotoUrl(), placeholder: #imageLiteral(resourceName: "Placeholder"), options: nil, progressBlock: nil, completionHandler: nil)
+        ownerNameLabel.text = photoDetailsViewModel?.getPhotoOwnerName()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        ownerNameLabel.isHidden = false
+    }
+    
     func config(_ viewModel: PhotoDetailsViewModel) {
         photoDetailsViewModel = viewModel
     }

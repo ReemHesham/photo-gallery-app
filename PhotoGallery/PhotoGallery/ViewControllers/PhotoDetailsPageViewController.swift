@@ -32,7 +32,9 @@ class PhotoDetailsPageViewController: UIPageViewController {
 
         dataSource = self
         delegate = self
+        self.navigationController?.view.backgroundColor = UIColor.black
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .plain, target: self, action: #selector(dismiss(_:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(share(_:)))
         guard let viewModel = photoPageViewModel else {
             return
         }
@@ -53,6 +55,18 @@ class PhotoDetailsPageViewController: UIPageViewController {
         }, completion: { (_) in
             self.dismiss(animated: true, completion: nil)
         })
+    }
+    
+    @objc private func share(_ sender: Any) {
+        guard let viewModel = photoPageViewModel else {
+            return
+        }
+        let photoUrl = viewModel.getPhotoUrl(at: currentIndex)
+        let activityViewController = UIActivityViewController(activityItems: [photoUrl], applicationActivities: nil)
+        // so that iPads won't crash
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     private func setupViewGestures() {

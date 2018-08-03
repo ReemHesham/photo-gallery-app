@@ -21,6 +21,10 @@ class PhotoPageViewModel {
         return photos.count
     }
     
+    func getPhotoUrl(at index: Int) -> String {
+        return photos[index].getPhotoSmallUrl()
+    }
+    
     func createPhotoDetailsViewModel(for index: Int) -> PhotoDetailsViewModel {
         return PhotoDetailsViewModel(photos[index])
     }
