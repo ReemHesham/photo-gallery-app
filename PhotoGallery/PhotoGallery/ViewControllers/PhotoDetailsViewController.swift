@@ -14,6 +14,7 @@ class PhotoDetailsViewController: UIViewController {
     @IBOutlet weak var ownerNameLabel: UILabel!
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var bottomView: UIView!
     
     var photoDetailsViewModel: PhotoDetailsViewModel?
     
@@ -32,7 +33,7 @@ class PhotoDetailsViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        ownerNameLabel.isHidden = false
+        bottomView.isHidden = false
     }
     
     func config(_ viewModel: PhotoDetailsViewModel) {
@@ -55,6 +56,20 @@ class PhotoDetailsViewController: UIViewController {
         zoomRect.origin.x = newCenter.x - (zoomRect.size.width / 2.0)
         zoomRect.origin.y = newCenter.y - (zoomRect.size.height / 2.0)
         return zoomRect
+    }
+    
+    func setUpBottomView() {
+
+        UIView.animate(withDuration: 0.23, delay: 0.0, options: .beginFromCurrentState, animations: { () -> Void in
+            
+            self.bottomView.isHidden = !self.bottomView.isHidden
+            
+        }, completion: nil)
+        
+    }
+
+    func handleBottomViewAppearance(isHidden: Bool) {
+        bottomView.isHidden = isHidden
     }
 }
 extension PhotoDetailsViewController: UIScrollViewDelegate {

@@ -71,7 +71,7 @@ class PhotoDetailsPageViewController: UIPageViewController {
     
     private func setupViewGestures() {
         var gestures = gestureRecognizers
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleNavigationBar(_:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
         gestures.append(tapGesture)
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
@@ -116,6 +116,7 @@ extension PhotoDetailsPageViewController: UIPageViewControllerDataSource {
         guard previousIndex >= 0, let viewModel = photoPageViewModel, viewModel.getPhotosCount() > previousIndex else {
             return nil
         }
+        setUpNavigationBar(true)
         return photoViewController(for: previousIndex)
     }
     
@@ -126,6 +127,7 @@ extension PhotoDetailsPageViewController: UIPageViewControllerDataSource {
         guard let viewModel = photoPageViewModel, viewModel.getPhotosCount() > nextIndex else {
             return nil
         }
+        setUpNavigationBar(true)
         return photoViewController(for: nextIndex)
     }
     

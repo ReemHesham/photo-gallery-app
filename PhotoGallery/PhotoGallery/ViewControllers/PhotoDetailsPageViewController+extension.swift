@@ -20,6 +20,7 @@ extension PhotoDetailsPageViewController {
                 } else {
                     let alpha = CGFloat(1.0 - step)
                     
+                    self.photoViewController(for: self.currentIndex)?.handleBottomViewAppearance(isHidden: true)
                     self.navigationController?.navigationBar.alpha = 0.0
                     self.navigationController?.view.backgroundColor = UIColor.black.withAlphaComponent(max(0.2, alpha * 0.9))
                     viewController.view.backgroundColor = UIColor.clear
@@ -74,8 +75,9 @@ extension PhotoDetailsPageViewController {
 
     // MARK: Gestures
     
-    @objc func handleNavigationBar(_ gesture:UITapGestureRecognizer) {
+    @objc func handleTapGesture(_ gesture:UITapGestureRecognizer) {
         setUpNavigationBar(isNavigationBarHidden == true)
+        setUpBottomView()
     }
     
     @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
@@ -150,5 +152,9 @@ extension PhotoDetailsPageViewController {
         }, completion: nil)
         
         self.setNeedsStatusBarAppearanceUpdate()
+    }
+
+    func setUpBottomView() {
+        photoViewController(for: currentIndex)?.setUpBottomView()
     }
 }
