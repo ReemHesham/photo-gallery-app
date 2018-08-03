@@ -11,10 +11,12 @@ import Kingfisher
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var ownerNameLabel: UILabel!
     @IBOutlet weak var photoImage: UIImageView!
     static let cellId = "PhotoCollectionViewCell"
     
-    func config(_ url: String) {
+    func configure(_ url: String, ownerName: String) {
+        ownerNameLabel.text = ownerName
         guard let url = URL(string: url) else {
             return
         }

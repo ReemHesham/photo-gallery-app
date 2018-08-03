@@ -46,9 +46,13 @@ class PhotosViewModel {
     }
 
     func getPhotoUrl(at index: Int) -> String {
-        return photos[index].urls?.small ?? ""
+        return photos[index].getPhotoSmallUrl()
     }
 
+    func getPhotoOwnerName(at index: Int) -> String {
+        return photos[index].getOwnerName()
+    }
+    
     func getPhotoSizeRatio(at index: Int) -> Float {
         guard let height = photos[index].height, let width = photos[index].width, width != 0 else {
             return 1
