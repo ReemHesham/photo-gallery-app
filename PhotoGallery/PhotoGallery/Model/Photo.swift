@@ -18,6 +18,15 @@ class Photo: NSObject {
     var color: String?
     var urls: PhotoUrls?
     var likes: Int?
+    var user: User?
+    
+    func getOwnerName() -> String {
+        return self.user?.name ?? ""
+    }
+    
+    func getPhotoSmallUrl() -> String {
+        return self.urls?.small ?? ""
+    }
     
     // MARK: - Static methods
     static func createObject(fromData data: [String: Any]) -> Photo {
@@ -33,6 +42,9 @@ class Photo: NSObject {
         photo.likes = data["likes"] as? Int
         if let urlsDictionary = data["urls"] as? [String: Any] {
             photo.urls = PhotoUrls.createObject(fromData: urlsDictionary)
+        }
+        if let userDictionary = data["user"] as? [String: Any] {
+            photo.user = User.createObject(fromData: userDictionary)
         }
 
         return photo
