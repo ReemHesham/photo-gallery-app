@@ -83,8 +83,13 @@ extension PhotoGalleryViewController: UICollectionViewDelegate {
 
 extension PhotoGalleryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width - 5) / 2
-        return CGSize(width: width, height: width)
+        
+        guard let viewModel = photosViewModel else {
+            return CGSize()
+        }
+        let width = collectionView.frame.width
+        let height = width * CGFloat(viewModel.getPhotoSizeRatio(at: indexPath.row))
+        return CGSize(width: width, height: height)
     }
 }
 

@@ -49,6 +49,13 @@ class PhotosViewModel {
         return photos[index].urls?.small ?? ""
     }
 
+    func getPhotoSizeRatio(at index: Int) -> Float {
+        guard let height = photos[index].height, let width = photos[index].width, width != 0 else {
+            return 1
+        }
+        return  Float(height)/Float(width)
+    }
+    
     func createPhotoDetailsPageViewModel(at index: Int) -> PhotoPageViewModel {
         return PhotoPageViewModel(photos, index: index)
     }
