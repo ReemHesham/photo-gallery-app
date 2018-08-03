@@ -93,7 +93,7 @@ extension PhotoDetailsViewController: UIScrollViewDelegate {
                 let left = 0.5 * (newWidth * scrollView.zoomScale > photoImage.frame.width ? (newWidth - photoImage.frame.width) : (scrollView.frame.width - scrollView.contentSize.width))
                 let top = 0.5 * (newHeight * scrollView.zoomScale > photoImage.frame.height ? (newHeight - photoImage.frame.height) : (scrollView.frame.height - scrollView.contentSize.height))
                 
-                scrollView.contentInset = UIEdgeInsetsMake(top, left, top, left)
+                scrollView.contentInset = UIEdgeInsets(top: top, left: left, bottom: top, right: left)
             }
         } else {
             scrollView.contentInset = .zero

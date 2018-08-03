@@ -18,7 +18,7 @@ class PhotoDetailsPageViewController: UIPageViewController {
     var panViewCenter:CGPoint = .zero
     var stepAnimate:((_ offset:CGFloat, _ viewController:UIViewController) -> Void) = { _,_ in }
     var restoreAnimation:((_ viewController:UIViewController) -> Void) = { _ in }
-    var dismissAnimation:((_ viewController:UIViewController, _ panDirection:CGPoint, _ completion: @escaping () -> (Void)) -> Void) = { _,_,_ in }
+    var dismissAnimation:((_ viewController:UIViewController, _ panDirection:CGPoint, _ completion: @escaping () -> Void) -> Void) = { _,_,_ in }
     fileprivate var pageSpacing:CGFloat = 10.0
     var panDismissTolerance:CGFloat = 30.0
     var originalTransform: CGAffineTransform?
