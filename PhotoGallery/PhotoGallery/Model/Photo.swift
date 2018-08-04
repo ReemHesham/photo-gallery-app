@@ -49,4 +49,19 @@ class Photo: NSObject {
 
         return photo
     }
+
+    /**
+     Parse photos response.
+     - parameter
+     data: array of dictionary contains the response data [[String: Any]].
+     - return : Array of Photo object.
+     */
+    static func parsePhotosResponse(_ data: [[String: Any]]) -> [Photo] {
+        var photos = [Photo]()
+        //Parsing photos array
+        for photo in data {
+            photos.append(Photo.createObject(fromData: photo))
+        }
+        return photos
+    }
 }

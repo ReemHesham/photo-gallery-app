@@ -28,7 +28,7 @@ class PhotosViewModel {
         if Utilities.isConnectedToNetwork() {
             APIClient().getPhotoes(pageNumber) { (data, error) in
                 if let data = data as? [[String: Any]] {
-                    self.photos += PhotosManager.shared.parsePhotosResponse(data)
+                    self.photos += Photo.parsePhotosResponse(data)
                     self.pageNumber += 1
                     self.isPendingResponse = false
                     self.delegate?.updateUI()
