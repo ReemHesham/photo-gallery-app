@@ -24,9 +24,7 @@ class PhotoDetailsViewController: UIViewController {
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 3.0
         scrollView.zoomScale = 1.0
-        let doubleTapGest = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTapScrollView(recognizer:)))
-        doubleTapGest.numberOfTapsRequired = 2
-        scrollView.addGestureRecognizer(doubleTapGest)
+        setupGesture()
         photoImage.kf.setImage(with: photoDetailsViewModel?.getPhotoUrl(), placeholder: #imageLiteral(resourceName: "Placeholder"), options: nil, progressBlock: nil, completionHandler: nil)
         ownerNameLabel.text = photoDetailsViewModel?.getPhotoOwnerName()
     }
@@ -40,22 +38,15 @@ class PhotoDetailsViewController: UIViewController {
         photoDetailsViewModel = viewModel
     }
 
-    @objc func handleDoubleTapScrollView(recognizer: UITapGestureRecognizer) {
-        if scrollView.zoomScale == 1 {
-            scrollView.zoom(to: zoomRectForScale(scale: scrollView.maximumZoomScale, center: recognizer.location(in: recognizer.view)), animated: true)
-        } else {
-            scrollView.setZoomScale(1, animated: true)
-        }
+    func setupGesture() {
+        let doubleTapGest = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTapScrollView(recognizer:)))
+        doubleTapGest.numberOfTapsRequired = 2
+        scrollView.addGestureRecognizer(doubleTapGest)
     }
-
-    func zoomRectForScale(scale: CGFloat, center: CGPoint) -> CGRect {
-        var zoomRect = CGRect.zero
-        zoomRect.size.height = photoImage.frame.size.height / scale
-        zoomRect.size.width  = photoImage.frame.size.width  / scale
-        let newCenter = photoImage.convert(center, from: scrollView)
-        zoomRect.origin.x = newCenter.x - (zoomRect.size.width / 2.0)
-        zoomRect.origin.y = newCenter.y - (zoomRect.size.height / 2.0)
-        return zoomRect
+    
+    @objc func handleDoubleTapScrollView(recognizer: UITapGestureRecognizer) {
+        let center = recognizer.location(in: recognizer.view)
+        scrollView.handleZoomOnDoubleClick(at: center, size: photoImage.frame.size, newCenter: photoImage.convert(center, from: scrollView))
     }
     
     func setUpBottomView() {
@@ -78,25 +69,8 @@ extension PhotoDetailsViewController: UIScrollViewDelegate {
     }
 
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        if scrollView.zoomScale > 1 {
-            
-            if let image = photoImage.image {
-                
-                let ratioW = photoImage.frame.width / image.size.width
-                let ratioH = photoImage.frame.height / image.size.height
-                
-                let ratio = ratioW < ratioH ? ratioW:ratioH
-                
-                let newWidth = image.size.width*ratio
-                let newHeight = image.size.height*ratio
-                
-                let left = 0.5 * (newWidth * scrollView.zoomScale > photoImage.frame.width ? (newWidth - photoImage.frame.width) : (scrollView.frame.width - scrollView.contentSize.width))
-                let top = 0.5 * (newHeight * scrollView.zoomScale > photoImage.frame.height ? (newHeight - photoImage.frame.height) : (scrollView.frame.height - scrollView.contentSize.height))
-                
-                scrollView.contentInset = UIEdgeInsets(top: top, left: left, bottom: top, right: left)
-            }
-        } else {
-            scrollView.contentInset = .zero
+        if let image = photoImage.image {
+            scrollView.handleZoom(for: photoImage.frame.size, imageSize: image.size)
         }
     }
 }

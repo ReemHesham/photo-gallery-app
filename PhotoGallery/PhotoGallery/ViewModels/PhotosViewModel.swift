@@ -26,7 +26,7 @@ class PhotosViewModel {
     func getPhotos() {
         isPendingResponse = true
         if Utilities.isConnectedToNetwork() {
-            APIClient().getPhotoes(pageNumber) { (data, error) in
+            APIClient().getPhotos(pageNumber) { (data, error) in
                 if let photos = data {
                     self.photos += photos
                     self.pageNumber += 1
