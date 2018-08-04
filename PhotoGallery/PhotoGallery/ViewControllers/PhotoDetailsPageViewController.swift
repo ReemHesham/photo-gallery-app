@@ -12,7 +12,7 @@ class PhotoDetailsPageViewController: UIPageViewController {
 
     fileprivate var photoPageViewModel: PhotoPageViewModel?
     var currentIndex: Int = 0
-    fileprivate let photoSliderCache = PhotoSliderCache()
+    fileprivate let photoSliderCache = NSCache<AnyObject, AnyObject>()
     var isNavigationBarHidden = false
     var originPanViewCenter:CGPoint = .zero
     var panViewCenter:CGPoint = .zero

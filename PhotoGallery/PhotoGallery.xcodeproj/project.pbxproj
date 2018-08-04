@@ -34,7 +34,6 @@
 		87327C312112817600D10EE5 /* PhotoDetailsPageViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87327C302112817500D10EE5 /* PhotoDetailsPageViewController+extension.swift */; };
 		87327C3321146AEA00D10EE5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87327C3221146AE900D10EE5 /* User.swift */; };
 		87327C3521147BF000D10EE5 /* UserProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87327C3421147BF000D10EE5 /* UserProfileImage.swift */; };
-		87AEEF822112111A00695796 /* PhotoSliderCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEEF812112111A00695796 /* PhotoSliderCache.swift */; };
 		87DC911B2111FCC0001CAF26 /* PhotoSlider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87DC911A2111FCC0001CAF26 /* PhotoSlider.storyboard */; };
 		CCBC5A4C0D3A846F54D62782 /* Pods_PhotoGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E968547ED783DEA2F02D0419 /* Pods_PhotoGallery.framework */; };
 /* End PBXBuildFile section */
@@ -91,7 +90,6 @@
 		87327C302112817500D10EE5 /* PhotoDetailsPageViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsPageViewController+extension.swift"; sourceTree = "<group>"; };
 		87327C3221146AE900D10EE5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		87327C3421147BF000D10EE5 /* UserProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImage.swift; sourceTree = "<group>"; };
-		87AEEF812112111A00695796 /* PhotoSliderCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSliderCache.swift; sourceTree = "<group>"; };
 		87DC911A2111FCC0001CAF26 /* PhotoSlider.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoSlider.storyboard; sourceTree = "<group>"; };
 		912F14319F300079C863DED0 /* Pods-PhotoGalleryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoGalleryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoGalleryUITests/Pods-PhotoGalleryUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BF223F19041CD4AF829EE150 /* Pods_PhotoGalleryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoGalleryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,7 +246,6 @@
 			children = (
 				87301222210BCF2000623708 /* Constants.swift */,
 				87301238210E570F00623708 /* Utilities.swift */,
-				87AEEF812112111A00695796 /* PhotoSliderCache.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -627,7 +624,6 @@
 			files = (
 				87301223210BCF2000623708 /* Constants.swift in Sources */,
 				8730122A210CAADA00623708 /* PhotosViewModel.swift in Sources */,
-				87AEEF822112111A00695796 /* PhotoSliderCache.swift in Sources */,
 				87301235210D0B6B00623708 /* PhotoSliderRouter.swift in Sources */,
 				8730121B210BA2F100623708 /* Photo.swift in Sources */,
 				87301239210E570F00623708 /* Utilities.swift in Sources */,
