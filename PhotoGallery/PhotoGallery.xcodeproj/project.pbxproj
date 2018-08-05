@@ -16,6 +16,8 @@
 		87064182210B5735002BF61B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87064180210B5735002BF61B /* LaunchScreen.storyboard */; };
 		8706418D210B5735002BF61B /* PhotoGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706418C210B5735002BF61B /* PhotoGalleryTests.swift */; };
 		87064198210B5735002BF61B /* PhotoGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87064197210B5735002BF61B /* PhotoGalleryUITests.swift */; };
+		870F872521175A0C00F47703 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F872421175A0C00F47703 /* AnimationHelper.swift */; };
+		870F872721175F0D00F47703 /* PagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F872621175F0D00F47703 /* PagerHelper.swift */; };
 		87158B95210F95C400B2190D /* Photos.json in Resources */ = {isa = PBXBuildFile; fileRef = 87158B94210F95B200B2190D /* Photos.json */; };
 		87158B9F2111D49300B2190D /* PhotoDetailsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87158B9E2111D49300B2190D /* PhotoDetailsPageViewController.swift */; };
 		87158BA12111E48400B2190D /* PhotoPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87158BA02111E48400B2190D /* PhotoPageViewModel.swift */; };
@@ -72,6 +74,8 @@
 		87064193210B5735002BF61B /* PhotoGalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoGalleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87064197210B5735002BF61B /* PhotoGalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryUITests.swift; sourceTree = "<group>"; };
 		87064199210B5735002BF61B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870F872421175A0C00F47703 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
+		870F872621175F0D00F47703 /* PagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerHelper.swift; sourceTree = "<group>"; };
 		87158B94210F95B200B2190D /* Photos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Photos.json; sourceTree = "<group>"; };
 		87158B9E2111D49300B2190D /* PhotoDetailsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsPageViewController.swift; sourceTree = "<group>"; };
 		87158BA02111E48400B2190D /* PhotoPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageViewModel.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 		87064176210B5735002BF61B /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
+				870F8723211759EF00F47703 /* Helpers */,
+				870F87202117359400F47703 /* Protocols */,
 				87301233210D0B4900623708 /* Routers */,
 				8730121F210BCA2D00623708 /* Network */,
 				87301219210BA2CE00623708 /* Model */,
@@ -257,6 +263,22 @@
 				87DC911A2111FCC0001CAF26 /* PhotoSlider.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		870F87202117359400F47703 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		870F8723211759EF00F47703 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				870F872421175A0C00F47703 /* AnimationHelper.swift */,
+				870F872621175F0D00F47703 /* PagerHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		87301219210BA2CE00623708 /* Model */ = {
@@ -633,12 +655,14 @@
 				87301237210D18B900623708 /* PhotoDetailsViewModel.swift in Sources */,
 				87301230210CD04500623708 /* PhotoCollectionViewCell.swift in Sources */,
 				87301232210D098600623708 /* PhotoDetailsViewController.swift in Sources */,
+				870F872521175A0C00F47703 /* AnimationHelper.swift in Sources */,
 				87301221210BCA4400623708 /* APIClient.swift in Sources */,
 				87064178210B5735002BF61B /* AppDelegate.swift in Sources */,
 				87327C3321146AEA00D10EE5 /* User.swift in Sources */,
 				87158BA12111E48400B2190D /* PhotoPageViewModel.swift in Sources */,
 				87327C312112817600D10EE5 /* PhotoDetailsPageViewController+extension.swift in Sources */,
 				87158B9F2111D49300B2190D /* PhotoDetailsPageViewController.swift in Sources */,
+				870F872721175F0D00F47703 /* PagerHelper.swift in Sources */,
 				87327C3521147BF000D10EE5 /* UserProfileImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
