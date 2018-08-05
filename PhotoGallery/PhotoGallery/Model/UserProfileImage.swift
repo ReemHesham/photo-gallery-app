@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserProfileImage: Codable {
+struct UserProfileImage: Codable {
     let small: String
     let medium: String
     let large: String
