@@ -1,4 +1,3 @@
-
 //
 //  PhotosViewModel.swift
 //  PhotoGallery
@@ -38,7 +37,7 @@ class PhotosViewModel {
                 }
             }
         } else {
-            delegate?.updateUI(with: Errors.noInternetConnection)
+            delegate?.updateUI(with: Errors.noInternetConnection.localized)
         }
     }
 

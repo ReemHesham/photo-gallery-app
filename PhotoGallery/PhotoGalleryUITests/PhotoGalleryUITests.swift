@@ -34,7 +34,7 @@ class PhotoGalleryUITests: XCTestCase {
         let collectionView = app.otherElements.containing(.navigationBar, identifier:"Gallery").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .collectionView).element
         collectionView.swipeUp()
         collectionView.tap()
-        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .scrollView).element
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .scrollView)
     }
     
 }

@@ -24,7 +24,7 @@ class APIClient {
             
             guard let statusCode = response.response?.statusCode,
                 200 ... 299 ~= statusCode, let data = response.data else {
-                    completion(nil, Errors.otherError)
+                    completion(nil, Errors.otherError.localized)
                     return
             }
             let decoder = JSONDecoder()
@@ -32,7 +32,7 @@ class APIClient {
                 let photos = try decoder.decode([Photo].self, from: data)
                 completion(photos, nil)
             } catch {
-                completion(nil, Errors.otherError)
+                completion(nil, Errors.otherError.localized)
             }
         }
     }
