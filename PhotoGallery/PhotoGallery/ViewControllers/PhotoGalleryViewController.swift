@@ -69,7 +69,7 @@ extension PhotoGalleryViewController: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photoSliderNavigation = PhotoSliderRouter.instantiateSliderPageNavigationController()
+        let photoSliderNavigation = PhotoSliderRouter().instantiateSliderPageNavigationController()
         guard let viewModel = photosViewModel, let photoDetailsPageVC = photoSliderNavigation.visibleViewController as? PhotoDetailsPageViewController else {
             return
         }

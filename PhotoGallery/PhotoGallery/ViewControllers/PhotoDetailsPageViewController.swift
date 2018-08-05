@@ -42,6 +42,7 @@ class PhotoDetailsPageViewController: UIPageViewController {
         self.navigationController?.view.backgroundColor = UIColor.black
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .plain, target: self, action: #selector(dismiss(_:)))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(share(_:)))
+        navigationItem.rightBarButtonItem?.accessibilityIdentifier = "Share"
     }
     
     private func setupViewGestures() {

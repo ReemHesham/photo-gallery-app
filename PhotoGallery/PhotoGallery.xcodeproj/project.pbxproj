@@ -180,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				870F8723211759EF00F47703 /* Helpers */,
-				870F87202117359400F47703 /* Protocols */,
 				87301233210D0B4900623708 /* Routers */,
 				8730121F210BCA2D00623708 /* Network */,
 				87301219210BA2CE00623708 /* Model */,
@@ -263,13 +262,6 @@
 				87DC911A2111FCC0001CAF26 /* PhotoSlider.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		870F87202117359400F47703 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		870F8723211759EF00F47703 /* Helpers */ = {

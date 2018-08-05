@@ -37,7 +37,7 @@ class PagerHelper {
         if let cachedViewController = photoSliderCache.object(forKey: pageIndex as AnyObject) as? PhotoDetailsViewController {
             return cachedViewController
         }
-        guard let viewController = PhotoSliderRouter.instantiatePhotoDetailsViewController() as? PhotoDetailsViewController, let photo = selectedPhoto else {
+        guard let viewController = PhotoSliderRouter().instantiatePhotoDetailsViewController() as? PhotoDetailsViewController, let photo = selectedPhoto else {
             fatalError("Unable to instantiate a PhotoDetailsViewController")
         }
         viewController.config(PhotoDetailsViewModel(photo))
