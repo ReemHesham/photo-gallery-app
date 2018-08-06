@@ -15,6 +15,7 @@ opt_in_rules: # some rules are only opt-in
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Pods
   - PhotoGalleryTests
+  - PhotoGalleryUITests
 
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level
@@ -24,7 +25,7 @@ force_unwrapping: error
 # rules that have both warning and error levels, can set just the warning level
 # implicitly
 line_length: 
-   - 200
+   - 220
    - 300
 function_body_length:
   - 65 

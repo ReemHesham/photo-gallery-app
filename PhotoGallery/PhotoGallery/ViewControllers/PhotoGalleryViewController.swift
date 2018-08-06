@@ -55,7 +55,7 @@ extension PhotoGalleryViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.cellId, for: indexPath) as? PhotoCollectionViewCell, let viewModel = photosViewModel else {
             return UICollectionViewCell()
         }
-        cell.config(viewModel.getPhotoUrl(at: indexPath.row))
+        cell.configure(viewModel.getPhotoUrl(at: indexPath.row), ownerName: viewModel.getPhotoOwnerName(at: indexPath.row))
         return cell
     }
 }
@@ -69,19 +69,27 @@ extension PhotoGalleryViewController: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let viewModel = photosViewModel, let photoDetailsVC = PhotoRouter.instantiatePhotoDetailsViewController() as? PhotoDetailsViewController else {
+        let photoSliderNavigation = PhotoSliderRouter.instantiateSliderPageNavigationController()
+        guard let viewModel = photosViewModel, let photoDetailsPageVC = photoSliderNavigation.visibleViewController as? PhotoDetailsPageViewController else {
             return
         }
-        photoDetailsVC.config(viewModel.createPhotoDetailsViewModel(at: indexPath.row))
-        self.navigationController?.pushViewController(photoDetailsVC, animated: true)
+        photoSliderNavigation.modalPresentationStyle = .overCurrentContext
+        photoSliderNavigation.modalPresentationCapturesStatusBarAppearance = true
+        photoDetailsPageVC.configure(viewModel.createPhotoDetailsPageViewModel(at: indexPath.row))
+        self.present(photoSliderNavigation, animated: true, completion: nil)
     }
     
 }
 
 extension PhotoGalleryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width - 5) / 2
-        return CGSize(width: width, height: width)
+        
+        guard let viewModel = photosViewModel else {
+            return CGSize()
+        }
+        let width = collectionView.frame.width
+        let height = width * CGFloat(viewModel.getPhotoSizeRatio(at: indexPath.row))
+        return CGSize(width: width, height: height)
     }
 }
 
