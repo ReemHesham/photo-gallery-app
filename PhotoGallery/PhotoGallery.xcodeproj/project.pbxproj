@@ -340,7 +340,6 @@
 				87064171210B5735002BF61B /* Frameworks */,
 				87064172210B5735002BF61B /* Resources */,
 				A921D7A4A2888205C7438DF4 /* [CP] Embed Pods Frameworks */,
-				F8879574E38793941965DFC6 /* [CP] Copy Pods Resources */,
 				870641EC210B91C0002BF61B /* Fabric Run Script */,
 				8730121C210BA44000623708 /* SwiftLint Run Script */,
 			);
@@ -361,8 +360,6 @@
 				87064184210B5735002BF61B /* Sources */,
 				87064185210B5735002BF61B /* Frameworks */,
 				87064186210B5735002BF61B /* Resources */,
-				3C955BBE7B2D1A09D35F2B69 /* [CP] Embed Pods Frameworks */,
-				DA3F76DA4AF288C8DDCEC317 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,8 +379,6 @@
 				8706418F210B5735002BF61B /* Sources */,
 				87064190210B5735002BF61B /* Frameworks */,
 				87064191210B5735002BF61B /* Resources */,
-				1B95C9C261A890946894839D /* [CP] Embed Pods Frameworks */,
-				3AB2BAED8DA3877B0AD3FB3A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -474,51 +469,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B95C9C261A890946894839D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoGalleryUITests/Pods-PhotoGalleryUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3AB2BAED8DA3877B0AD3FB3A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoGalleryUITests/Pods-PhotoGalleryUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3C955BBE7B2D1A09D35F2B69 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoGalleryTests/Pods-PhotoGalleryTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		870641EC210B91C0002BF61B /* Fabric Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -601,36 +551,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoGallery/Pods-PhotoGallery-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DA3F76DA4AF288C8DDCEC317 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoGalleryTests/Pods-PhotoGalleryTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F8879574E38793941965DFC6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoGallery/Pods-PhotoGallery-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FBC491948277C61A523EC98A /* [CP] Check Pods Manifest.lock */ = {
@@ -876,11 +796,11 @@
 				CLIENT_ID = 80eb3f4209c4141e090a933d79d6e1feceac02812383e6fe0de25349aa239ebd;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = FQ6DQCJ2Q7;
+				DEVELOPMENT_TEAM = 2V6G4KL44T;
 				INFOPLIST_FILE = PhotoGallery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.reem.PhotoGallery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reem.PhotoGalleryy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -894,11 +814,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLIENT_ID = 80eb3f4209c4141e090a933d79d6e1feceac02812383e6fe0de25349aa239ebd;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FQ6DQCJ2Q7;
+				DEVELOPMENT_TEAM = 2V6G4KL44T;
 				INFOPLIST_FILE = PhotoGallery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.reem.PhotoGallery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reem.PhotoGalleryy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
