@@ -12,27 +12,27 @@ import Alamofire
 class APIClient {
     
     /**
-     Send request to server and retrive response.
+     Send request to server and retrieve response.
      
      - parameter
      pageNumber: Integer represents the current page number
-     completion: The completion block, send either the reponse as [[String: Any]] or nil in case or error.
+     completion: The completion block, send either the reponse as [Photo] or nil in case or error.
      */
-    func getPhotoes(_ pageNumber: Int, completion: @escaping (Any?, String?) -> Void) {
+    func getPhotos(_ pageNumber: Int, completion: @escaping ([Photo]?, String?) -> Void) {
         let url = "\(URLs.baseUrl)\(URLs.photos)?client_id=\(clientId)&page=\(pageNumber)&per_page=\(photosPerPage)"
         Alamofire.request(url).responseJSON { response in
             
-            guard let statusCode = response.response?.statusCode else {
-                completion(nil, Errors.otherError)
-                return
+            guard let statusCode = response.response?.statusCode,
+                200 ... 299 ~= statusCode, let data = response.data else {
+                    completion(nil, Errors.otherError.localized)
+                    return
             }
-            switch statusCode {
-            case 200:
-                if let data = response.result.value  as? [[String: Any]] {
-                    completion(data, nil)
-                }
-            default:
-                completion(nil, Errors.otherError)
+            let decoder = JSONDecoder()
+            do {
+                let photos = try decoder.decode([Photo].self, from: data)
+                completion(photos, nil)
+            } catch {
+                completion(nil, Errors.otherError.localized)
             }
         }
     }

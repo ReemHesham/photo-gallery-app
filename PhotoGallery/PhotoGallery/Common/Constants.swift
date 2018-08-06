@@ -14,8 +14,8 @@ enum URLs {
 }
 
 enum Errors {
-    static let noInternetConnection = "You are currently offline.\nCheck your settings and try again"
-    static let otherError = "Something went wrong, please try again"
+    static let noInternetConnection = "noInternetConnection"
+    static let otherError = "otherError"
 }
 
 let photosPerPage = 30

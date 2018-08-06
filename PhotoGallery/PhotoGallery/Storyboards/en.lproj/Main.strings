@@ -1,0 +1,9 @@
+
+/* Class = "UINavigationItem"; title = "Gallery"; ObjectID = "55f-Ko-TCh"; */
+"55f-Ko-TCh.title" = "Gallery";
+
+/* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "S7i-QO-dky"; */
+"S7i-QO-dky.normalTitle" = "Retry";
+
+/* Class = "UILabel"; text = "You are currently offline.Check your settings and try again"; ObjectID = "cBi-h3-SCd"; */
+"cBi-h3-SCd.text" = "You are currently offline.Check your settings and try again";

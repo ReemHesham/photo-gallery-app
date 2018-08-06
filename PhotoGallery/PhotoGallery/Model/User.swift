@@ -8,29 +8,24 @@
 
 import Foundation
 
-class User {
-    var id: String?
-    var username: String?
-    var name: String?
-    var portfolioUrl: String?
-    var profileImage: UserProfileImage?
-    var totalPhotos: String?
-    var totalLiks: String?
+struct User: Codable {
+    let id: String
+    let username: String
+    let name: String
+    let portfolioUrl: String?
+    let profileImage: UserProfileImage
+    let totalPhotos: Int
+    let totalLiks: Int
 
-    // MARK: - Static methods
-    static func createObject(fromData data: [String: Any]) -> User {
-        
-        let user = User()
-        user.id = data["id"] as? String
-        user.username = data["username"] as? String
-        user.name = data["name"] as? String
-        user.portfolioUrl = data["portfolio_url"] as? String
-        user.totalPhotos = data["total_photos"] as? String
-        user.totalLiks = data["total_likes"] as? String
-        if let urlsDictionary = data["profile_image"] as? [String: Any] {
-            user.profileImage = UserProfileImage.createObject(fromData: urlsDictionary)
-        }
-        
-        return user
+    // Override the property name to match the respective JSON field name
+    private enum CodingKeys : String, CodingKey {
+        case id
+        case username
+        case name
+        case portfolioUrl = "portfolio_url"
+        case totalPhotos = "total_photos"
+        case totalLiks = "total_likes"
+        case profileImage = "profile_image"
     }
+
 }

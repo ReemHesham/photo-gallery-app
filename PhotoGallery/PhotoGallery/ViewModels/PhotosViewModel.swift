@@ -26,9 +26,9 @@ class PhotosViewModel {
     func getPhotos() {
         isPendingResponse = true
         if Utilities.isConnectedToNetwork() {
-            APIClient().getPhotoes(pageNumber) { (data, error) in
-                if let data = data as? [[String: Any]] {
-                    self.photos += PhotosManager.shared.parsePhotosResponse(data)
+            APIClient().getPhotos(pageNumber) { (data, error) in
+                if let photos = data {
+                    self.photos += photos
                     self.pageNumber += 1
                     self.isPendingResponse = false
                     self.delegate?.updateUI()
@@ -37,7 +37,7 @@ class PhotosViewModel {
                 }
             }
         } else {
-            delegate?.updateUI(with: Errors.noInternetConnection)
+            delegate?.updateUI(with: Errors.noInternetConnection.localized)
         }
     }
 
@@ -54,10 +54,7 @@ class PhotosViewModel {
     }
     
     func getPhotoSizeRatio(at index: Int) -> Float {
-        guard let height = photos[index].height, let width = photos[index].width, width != 0 else {
-            return 1
-        }
-        return  Float(height)/Float(width)
+        return  Float(photos[index].height)/Float(photos[index].width)
     }
     
     func createPhotoDetailsPageViewModel(at index: Int) -> PhotoPageViewModel {

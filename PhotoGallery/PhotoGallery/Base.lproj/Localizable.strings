@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  PhotoGallery
+
+  Created by reem hesham on 8/5/18.
+  Copyright © 2018 reem hesham. All rights reserved.
+*/
+"noInternetConnection"="You are currently offline.\nCheck your settings and try again";
+"otherError"= "Something went wrong.\nPlease try again";
