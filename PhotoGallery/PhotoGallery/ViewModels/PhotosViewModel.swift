@@ -36,7 +36,7 @@ class PhotosViewModel {
                     self.delegate?.updateUI(with: error)
                 }
             }
-        } else {
+        } else if photos.count == 0 {
             delegate?.updateUI(with: Errors.noInternetConnection.localized)
         }
     }
