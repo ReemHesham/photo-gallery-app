@@ -1,7 +1,8 @@
 # Photo Gallery App
 
 
-[Photo Gallery](https://github.com/ReemHesham/photo-gallery-app) is a photo app, which fetch and display photos from a Unsplsh public API.
+[Photo Gallery](https://github.com/ReemHesham/photo-gallery-app) is a photo app, which fetch and display photos from Unsplsh public API.
+
 ![](https://github.com/ReemHesham/photo-gallery-app/blob/master/GalleryDemo.gif)
 
   - I used Unsplash public API to fetch list of photos
@@ -40,7 +41,9 @@ _GET /photos_
 - SwiftLint for linting
 - Alamofire for networking
 - Fabric and Crashlytics for bug reporting
+
 ### Testing
+
 - I added Unit testing and UI testing
 
 **I created 3 pull requests:**
