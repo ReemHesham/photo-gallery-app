@@ -48,7 +48,7 @@ _GET /photos_
 
 **I created 3 pull requests:**
 
-- [Photo gallery using Unsplash APIs](https://github.com/ReemHesham/photo-gallery-app/pull/1) Which contains the main app features only fetch photos from the Unsplash API and displaying then on grid and on tap open single photo in full view
+- [Photo gallery using Unsplash APIs](https://github.com/ReemHesham/photo-gallery-app/pull/1) Which contains the main app features only fetch photos from the Unsplash API and displaying them on grid and on tap open single photo in full view
 
 - [Gallery bonus features](https://github.com/ReemHesham/photo-gallery-app/pull/2) In this pull request I implemented extra features like I explained before in the app features part
 
